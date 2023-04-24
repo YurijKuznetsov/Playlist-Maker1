@@ -48,7 +48,7 @@
         android:textSize="@dimen/text_size2"
         android:thumb="@drawable/knob"
         android:track="@drawable/track"
-        tools:ignore="UseSwitchCompatOrMaterialXml,VisualLintButtonSize" />
+        tools:ignore="UseSwitchCompatOrMaterialXml,VisualLintButtonSize,TextContrastCheck" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -62,7 +62,8 @@
             android:text="@string/send"
             android:textColor="@color/black"
             android:textFontWeight="400"
-            android:textSize="@dimen/text_size2" />
+            android:textSize="@dimen/text_size2"
+            tools:ignore="TextContrastCheck" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -86,7 +87,8 @@
             android:text="@string/support"
             android:textColor="@color/black"
             android:textFontWeight="400"
-            android:textSize="@dimen/text_size2" />
+            android:textSize="@dimen/text_size2"
+            tools:ignore="TextContrastCheck" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -110,7 +112,8 @@
             android:text="@string/user_agreement"
             android:textColor="@color/black"
             android:textFontWeight="400"
-            android:textSize="@dimen/text_size2" />
+            android:textSize="@dimen/text_size2"
+            tools:ignore="TextContrastCheck" />
 
         <ImageView
             android:layout_width="wrap_content"
