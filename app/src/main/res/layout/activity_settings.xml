@@ -17,14 +17,14 @@
         tools:ignore="UseCompoundDrawables">
 
         <ImageView
+            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="2dp"
             android:paddingHorizontal="4dp"
             android:paddingVertical="4dp"
-            android:src="@drawable/back"
-            tools:ignore="ContentDescription" />
+            android:src="@drawable/back" />
 
         <TextView
             android:layout_width="wrap_content"
