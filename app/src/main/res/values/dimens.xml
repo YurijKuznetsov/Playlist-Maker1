@@ -7,6 +7,5 @@
     <dimen name="corner_radius">16dp</dimen>
     <dimen name="text_size">22sp</dimen>
     <dimen name="text_size2">16sp</dimen>
-    <dimen name="height">61dp</dimen>
 
 </resources>
