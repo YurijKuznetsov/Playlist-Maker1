@@ -13,5 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="iconTint">@color/gray</item>
+        <item name="thumbColor">@color/gray</item>
+        <item name="trackColor">@color/light_gray</item>
     </style>
 </resources>

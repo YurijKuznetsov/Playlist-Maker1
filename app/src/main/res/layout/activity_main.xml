@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Theme.PlaylistMaker"
     android:background="?attr/colorPrimary">
 
     <TextView
@@ -17,7 +18,7 @@
         android:fontFamily="@font/ys_display_medium"
         android:textAllCaps="false"
         android:textSize="@dimen/text_size"
-        tools:ignore="MissingConstraints,RtlSymmetry,VisualLintOverlap,TextContrastCheck" />
+        tools:ignore="MissingConstraints,RtlSymmetry,VisualLintOverlap" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,7 +51,7 @@
             android:layout_marginBottom="28dp"
             android:text="@string/Setting"
             app:icon="@drawable/setting"
-            tools:ignore="HardcodedText,VisualLintButtonSize,TextContrastCheck" />
+            tools:ignore="VisualLintButtonSize" />
 
 
     </LinearLayout>
