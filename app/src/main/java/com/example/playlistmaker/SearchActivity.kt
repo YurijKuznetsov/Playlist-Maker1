@@ -11,15 +11,19 @@ import android.widget.ImageView
 import androidx.appcompat.widget.Toolbar
 
 class SearchActivity : AppCompatActivity() {
+    companion object {
+        private const val INPUT_SEARCH = "INPUT_SEARCH"
+    }
+    private var inputSearch: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
+        val inputEditText = findViewById<EditText>(R.id.inputEditText)
+        val clearButton = findViewById<ImageView>(R.id.clear_icon)
         val toolbarSearch = findViewById<Toolbar>(R.id.toolbar_search)
         toolbarSearch.setNavigationOnClickListener {
             finish()
         }
-        val inputEditText = findViewById<EditText>(R.id.inputEditText)
-        val clearButton = findViewById<ImageView>(R.id.clear_icon)
         clearButton.setOnClickListener {
             inputEditText.setText("")
             val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
@@ -40,6 +44,17 @@ class SearchActivity : AppCompatActivity() {
             }
         }
         inputEditText.addTextChangedListener(simpleTextWatcher)
+        inputEditText.setText(inputSearch)
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(INPUT_SEARCH, inputSearch)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+            inputSearch = savedInstanceState.getString(INPUT_SEARCH, "")
+
     }
     private fun clearButtonVisibility(s: CharSequence?) : Int {
         return if (s.isNullOrEmpty()) {
