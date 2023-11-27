@@ -6,17 +6,26 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.FrameLayout
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.SwitchCompat
 
 class SettingsActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
-        val buttonBack = findViewById<ImageView>(R.id.button_back)
-        buttonBack.setOnClickListener {
+        val toolbarSetting = findViewById<android.widget.Toolbar>(R.id.toolbar_setting)
+        toolbarSetting.setNavigationOnClickListener {
             finish()
+        }
+        val switcherNightTheme = findViewById<SwitchCompat>(R.id.switch_night_theme)
+        switcherNightTheme.setOnCheckedChangeListener {buttonview,  isChecked ->
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
         }
         val buttonShare = findViewById<FrameLayout>(R.id.button_share)
         buttonShare.setOnClickListener {
