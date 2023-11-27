@@ -3,6 +3,7 @@
     <style name="editTextStyle">
         <item name="backgroundTint">@color/white</item>
         <item name="android:textColorHint">@color/black_1</item>
+        <item name="android:textColor">@color/black_1</item>
         <item name="android:drawableTint">@color/black_1</item>
         <item name="android:textSize">@dimen/text_size2</item>
         <item name="titleMarginStart">24dp</item>

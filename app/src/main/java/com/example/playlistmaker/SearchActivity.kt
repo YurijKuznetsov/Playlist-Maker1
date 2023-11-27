@@ -43,6 +43,7 @@ class SearchActivity : AppCompatActivity() {
                 //
             }
         }
+        inputSearch = inputEditText.text.toString()
         inputEditText.addTextChangedListener(simpleTextWatcher)
         inputEditText.setText(inputSearch)
     }
@@ -53,8 +54,7 @@ class SearchActivity : AppCompatActivity() {
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-            inputSearch = savedInstanceState.getString(INPUT_SEARCH, "")
-
+        inputSearch = savedInstanceState.getString(INPUT_SEARCH, "")
     }
     private fun clearButtonVisibility(s: CharSequence?) : Int {
         return if (s.isNullOrEmpty()) {
