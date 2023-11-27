@@ -20,7 +20,7 @@ class SettingsActivity : AppCompatActivity() {
             finish()
         }
         val switcherNightTheme = findViewById<SwitchCompat>(R.id.switch_night_theme)
-        switcherNightTheme.setOnCheckedChangeListener {buttonview,  isChecked ->
+        switcherNightTheme.setOnCheckedChangeListener {_,  isChecked ->
             if (isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             } else {

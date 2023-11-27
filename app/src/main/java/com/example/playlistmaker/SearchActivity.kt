@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.isVisible
 
 class SearchActivity : AppCompatActivity() {
     companion object {
@@ -36,14 +36,14 @@ class SearchActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                clearButton.visibility = clearButtonVisibility(s)
+                clearButton.isVisible = !s.isNullOrEmpty()
+                inputSearch =s.toString()
             }
 
             override fun afterTextChanged(s: Editable?) {
                 //
             }
         }
-        inputSearch = inputEditText.text.toString()
         inputEditText.addTextChangedListener(simpleTextWatcher)
         inputEditText.setText(inputSearch)
     }
@@ -56,11 +56,5 @@ class SearchActivity : AppCompatActivity() {
         super.onRestoreInstanceState(savedInstanceState)
         inputSearch = savedInstanceState.getString(INPUT_SEARCH, "")
     }
-    private fun clearButtonVisibility(s: CharSequence?) : Int {
-        return if (s.isNullOrEmpty()) {
-          View.GONE
-        } else {
-            View.VISIBLE
-        }
-    }
+
 }
