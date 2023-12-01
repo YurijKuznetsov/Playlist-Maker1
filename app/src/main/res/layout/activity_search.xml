@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.PlaylistMaker"
+    android:background="?attr/colorSecondary"
     tools:context=".SearchActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_search"
+        style="@style/toolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/arrow_back"
+        app:title="@string/search"
+        app:titleMarginBottom="@dimen/padding_12"
+        app:titleMarginStart="@dimen/padding_16"
+        app:titleMarginTop="@dimen/padding_14"
+        tools:ignore="MissingConstraints" />
+
+    <FrameLayout
+        style="@style/editTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/padding_16"
+        android:layout_marginVertical="@dimen/padding_08"
+        android:background="@drawable/search_bg">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/inputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/editTextStyle"
+            android:background="@null"
+            android:layout_gravity="start"
+            android:cursorVisible="true"
+            android:drawableStart="@drawable/vector"
+            android:drawablePadding="@dimen/padding_04"
+            android:hint="@string/search"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingVertical="@dimen/padding_07"
+            android:paddingStart="@dimen/padding_14"
+            android:textCursorDrawable="@drawable/cursor"
+            tools:ignore="Autofill,RtlSymmetry,TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/clear_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingHorizontal="9dp"
+            android:paddingVertical="6dp"
+            android:src="@drawable/android_icon"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
+
+
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_16"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+</LinearLayout>

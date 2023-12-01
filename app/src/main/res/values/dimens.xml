@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="padding_start">16dp</dimen>
-    <dimen name="padding_top">14dp</dimen>
-    <dimen name="padding_vertical">21dp</dimen>
-    <dimen name="icon_padding">10dp</dimen>
-    <dimen name="corner_radius">16dp</dimen>
+    <dimen name="padding_02">2dp</dimen>
+    <dimen name="padding_04">4dp</dimen>
+    <dimen name="padding_07">7dp</dimen>
+    <dimen name="padding_08">8dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_12">12dp</dimen>
+    <dimen name="padding_14">14dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
+    <dimen name="padding_20">20dp</dimen>
+    <dimen name="padding_21">21dp</dimen>
+    <dimen name="padding_22">22dp</dimen>
+    <dimen name="padding_24">24dp</dimen>
     <dimen name="text_size">22sp</dimen>
     <dimen name="text_size2">16sp</dimen>
+    <dimen name="text_size3">11sp</dimen>
 
 </resources>
