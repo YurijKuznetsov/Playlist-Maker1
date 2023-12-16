@@ -45,6 +45,7 @@
             android:paddingVertical="@dimen/padding_07"
             android:paddingStart="@dimen/padding_14"
             android:textCursorDrawable="@drawable/cursor"
+            android:imeOptions="actionDone"
             tools:ignore="Autofill,RtlSymmetry,TouchTargetSizeCheck" />
 
         <ImageView
@@ -64,7 +65,27 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_search"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginTop="@dimen/padding_16"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <include
+        layout="@layout/not_found_placeholder"
+        android:visibility="gone"/>
+
+    <include
+        layout="@layout/not_internet_placeholder"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/button_clear_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/buttonUpdateStyle"
+        android:layout_marginTop="@dimen/padding_24"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/clear_history"
+        android:visibility="gone"
+        tools:visibility="visible"/>
 </LinearLayout>
