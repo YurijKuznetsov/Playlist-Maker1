@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="61dp"
     android:orientation="horizontal"
@@ -14,70 +14,76 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginVertical="@dimen/padding_08"
-        tools:src="@drawable/placeholder"
-        tools:ignore="ContentDescription" />
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription,MissingConstraints,UnknownId"
+        tools:src="@drawable/placeholder" />
 
-    <LinearLayout
-        android:layout_width="0dp"
+
+    <TextView
+        android:id="@+id/track_name"
+        style="@style/messageTextStyle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:layout_marginHorizontal="@dimen/padding_08">
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="14dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toEndOf="@+id/track_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/track_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding_14"
-            style="@style/messageTextStyle"
-            android:maxLines="1"
-            android:ellipsize="end"
-            tools:text="@string/track_name_1"/>
+    <TextView
+        android:id="@+id/artist_name"
+        style="@style/messageTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="?attr/iconTint"
+        android:textSize="@dimen/text_size3"
+        app:layout_constraintStart_toEndOf="@+id/track_image"
+        app:layout_constraintTop_toBottomOf="@+id/track_name"
+        tools:ignore="MissingConstraints" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic"
+        app:layout_constraintStart_toEndOf="@+id/artist_name"
+        app:layout_constraintTop_toBottomOf="@+id/track_name"
+        app:tint="?attr/iconTint"
+        tools:ignore="ContentDescription,MissingConstraints" />
 
-            <TextView
-                android:id="@+id/artist_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/messageTextStyle"
-                android:textSize="@dimen/text_size3"
-                android:textColor="?attr/iconTint"
-                android:maxLines="1"
-                android:ellipsize="end"
-                tools:text="@string/artist_name_1"/>
+    <TextView
+        android:id="@+id/track_time"
+        style="@style/messageTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="?attr/iconTint"
+        android:textSize="@dimen/text_size3"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/track_name" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic"
-                app:tint="?attr/iconTint"
-                tools:ignore="ContentDescription" />
-
-            <TextView
-                android:id="@+id/track_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/messageTextStyle"
-                android:textSize="@dimen/text_size3"
-                android:textColor="?attr/iconTint"
-                android:maxLines="1"
-                tools:text="@string/track_time_1"/>
-        </LinearLayout>
-
-
-    </LinearLayout>
-    
     <ImageView
         android:id="@+id/track_arrow_forward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
+        android:layout_marginEnd="12dp"
         android:src="@drawable/arrow_forward_track"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:tint="?attr/iconTint"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
