@@ -15,11 +15,11 @@ class SearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val artistName: TextView = itemView.findViewById(R.id.artist_name)
     private val trackTime: TextView = itemView.findViewById(R.id.track_time)
     private val trackImage: ImageView = itemView.findViewById(R.id.track_image)
-
-    fun bind(model: Track) {
+    fun bind(model: Track, onclickTrackInterface: SearchAdapter.OnclickTrackInterface) {
         trackName.text = model.trackName
         artistName.text = model.artistName
-        trackTime.text = SimpleDateFormat("mm:ss", Locale.getDefault()).format(model.trackTimeMillis)
+        trackTime.text =
+            SimpleDateFormat("mm:ss", Locale.getDefault()).format(model.trackTimeMillis)
         val cornerRadius = itemView.resources.getDimension(R.dimen.padding_02)
         Glide.with(itemView)
             .load(model.artworkUrl100)
@@ -27,9 +27,11 @@ class SearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
             .transform(RoundedCorners(cornerRadius.toInt()))
             .placeholder(R.drawable.placeholder)
             .into(trackImage)
+        itemView.setOnClickListener {
+            onclickTrackInterface.onClickTrack(model)
+        }
+
     }
-
-
 }
 
 

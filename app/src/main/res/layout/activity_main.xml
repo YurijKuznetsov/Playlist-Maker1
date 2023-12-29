@@ -39,7 +39,7 @@
         android:id="@+id/buttonSettings"
         style="@style/mainButtonStyle"
         android:layout_marginTop="@dimen/padding_16"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="@dimen/padding_28"
         android:text="@string/Setting"
         app:icon="@drawable/setting"
         tools:ignore="VisualLintButtonSize" />
