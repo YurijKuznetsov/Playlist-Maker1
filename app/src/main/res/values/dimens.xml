@@ -2,18 +2,31 @@
 <resources>
     <dimen name="padding_02">2dp</dimen>
     <dimen name="padding_04">4dp</dimen>
+    <dimen name="padding_06">6dp</dimen>
     <dimen name="padding_07">7dp</dimen>
     <dimen name="padding_08">8dp</dimen>
+    <dimen name="padding_09">9dp</dimen>
     <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_11">11dp</dimen>
     <dimen name="padding_12">12dp</dimen>
+    <dimen name="padding_13">13dp</dimen>
     <dimen name="padding_14">14dp</dimen>
     <dimen name="padding_16">16dp</dimen>
+    <dimen name="padding_18">18dp</dimen>
     <dimen name="padding_20">20dp</dimen>
     <dimen name="padding_21">21dp</dimen>
     <dimen name="padding_22">22dp</dimen>
     <dimen name="padding_24">24dp</dimen>
-    <dimen name="text_size">22sp</dimen>
-    <dimen name="text_size2">16sp</dimen>
-    <dimen name="text_size3">11sp</dimen>
+    <dimen name="padding_28">28dp</dimen>
+    <dimen name="padding_45">45dp</dimen>
+    <dimen name="padding_48">48dp</dimen>
+    <dimen name="padding_54">54dp</dimen>
+    <dimen name="padding_61">61dp</dimen>
+    <dimen name="padding_102">102dp</dimen>
+    <dimen name="text_size_11">11sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_19">19sp</dimen>
+    <dimen name="text_size_22">22sp</dimen>
 
 </resources>

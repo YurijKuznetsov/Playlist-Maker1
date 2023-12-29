@@ -31,21 +31,21 @@
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/inputEditText"
+            style="@style/editTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/editTextStyle"
-            android:background="@null"
             android:layout_gravity="start"
+            android:background="@null"
             android:cursorVisible="true"
             android:drawableStart="@drawable/vector"
             android:drawablePadding="@dimen/padding_04"
             android:hint="@string/search"
+            android:imeOptions="actionDone"
             android:inputType="text"
             android:maxLines="1"
             android:paddingVertical="@dimen/padding_07"
             android:paddingStart="@dimen/padding_14"
             android:textCursorDrawable="@drawable/cursor"
-            android:imeOptions="actionDone"
             tools:ignore="Autofill,RtlSymmetry,TouchTargetSizeCheck" />
 
         <ImageView
@@ -53,8 +53,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:paddingHorizontal="9dp"
-            android:paddingVertical="6dp"
+            android:paddingHorizontal="@dimen/padding_09"
+            android:paddingVertical="@dimen/padding_06"
             android:src="@drawable/android_icon"
             android:visibility="gone"
             tools:ignore="ContentDescription" />
@@ -78,14 +78,7 @@
         layout="@layout/not_internet_placeholder"
         android:visibility="gone"/>
 
-    <Button
-        android:id="@+id/button_clear_history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/buttonUpdateStyle"
-        android:layout_marginTop="@dimen/padding_24"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/clear_history"
-        android:visibility="gone"
-        tools:visibility="visible"/>
+    <include
+        layout="@layout/search_history" />
+
 </LinearLayout>
